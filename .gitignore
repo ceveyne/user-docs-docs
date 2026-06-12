@@ -1,0 +1,23 @@
+*
+
+.DS_Store
+
+!.gitignore
+
+!README.md
+!LICENSE
+
+!docs/
+!docs/**
+!docs/images/
+!docs/images/**
+docs/**/.DS_Store
+
+# initial-docs: only SETUP.md + images on GitHub
+docs/initial-docs/*
+!docs/initial-docs/SETUP.md
+!docs/initial-docs/images/
+!docs/initial-docs/images/**
+
+# GitHub config
+.github/
