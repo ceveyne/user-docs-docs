@@ -9,6 +9,15 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.3] - 2026-06-14 Revision 3
+
+### Changed
+
+- Enhanced tool descriptions.
+- Fine-tuned tool results.
+
+---
+
 ## [0.1.2] - 2026-06-13 Revision 2
 
 ### Changed
