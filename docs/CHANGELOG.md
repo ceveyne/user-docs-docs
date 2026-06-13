@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.2] - 2026-06-13 Revision 2
+
+### Changed
+
+- Updated user documentation (README.md, USER_GUIDE.md, DEPLOYMENT.md).
+
+---
+
 ## [0.1.1] - 2026-06-12 Revision 1
 
 ### Added

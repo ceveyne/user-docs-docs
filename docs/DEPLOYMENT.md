@@ -3,7 +3,6 @@
 ## Scenario 1 – Single Machine (e.g. MacBook Pro M5)
 
 All components run on one machine. LM Studio acts as both client and server.
-The plugin communicates with both the local LM Studio server and the local Draw Things backend.
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -52,7 +51,7 @@ graph TD
 | ------------------------------ | --------------------------- |
 | `model`                        | `qwen/qwen3.6-35b-a3b`      |
 | `baseUrl` / `embeddingBaseUrl` | `http://127.0.0.1:1234/v1`  |
-| `embeddingModel`.              | `ggml-org/bge-m3-Q8_0-GGUF` |
+| `embeddingModel`               | `ggml-org/bge-m3-Q8_0-GGUF` |
 | `qwen3VlModelPath`             | `qwen/qwen3-vl-8b`          |
 
 ---
@@ -61,7 +60,6 @@ graph TD
 
 LM Studio Client and LM Studio backend share one machine.
 The LM Studio Server (agent inference) runs on a dedicated, more powerful machine.
-The plugin always maintains two connections: one to the local LM Studio Server, one to the agent inference backend.
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -115,6 +113,6 @@ graph LR
 | ------------------ | --------------------------- |
 | `model`            | `qwen/qwen3.6-35b-a3b`      |
 | `baseUrl`          | `http://127.0.0.1:1234/v1`  |
-| `embeddingModel`.  | `ggml-org/bge-m3-Q8_0-GGUF` |
+| `embeddingModel`   | `ggml-org/bge-m3-Q8_0-GGUF` |
 | `qwen3VlModelPath` | `qwen/qwen3-vl-8b`          |
 | `embeddingBaseUrl` | `http://127.0.0.1:1234/v1`  |
