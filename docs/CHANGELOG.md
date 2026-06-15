@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.4] - 2026-06-15 Revision 4
+
+### Changed
+
+- Vision primer now uses a two-phase lazy-init flow (core 4B at startup, policy-resolved model on first generate) to avoid duplicate model loading and ensure correct config resolution.
+
+---
+
 ## [0.1.3] - 2026-06-14 Revision 3
 
 ### Changed
