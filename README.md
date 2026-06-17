@@ -221,6 +221,8 @@ Determine what you want from user-docs. This determines which directories to con
 - **Document management (PKM)** → Keep `Auto-read user-docs Guide` ON (default) — agent starts fully operational every session. Sessions start slightly slower.
 - **Multi-backend access only** → Set it OFF — faster startup, guide available on demand via the agent anytime.
 
+![Auto-read user-docs Guide](docs/images/auto-read-user-docs-guide.jpeg)
+
 ---
 
 ### Step 4 — Configure Content Directories
