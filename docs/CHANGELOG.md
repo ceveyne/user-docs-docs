@@ -9,6 +9,15 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.5] - 2026-06-20 Revision 5
+
+### Changed
+
+- Vision inference for `analyse_image` and `annotate_image` now uses only the configured `embeddingBaseUrl` / LM-Studio-compatible Vision API path; the legacy local Python/FastVLM backend was removed.
+- Cleaned up settings by removing legacy local vision server endpoint, TTL, and port options while keeping API token, model, prompt, max-token, and temperature controls.
+
+---
+
 ## [0.1.4] - 2026-06-17 Revision 4
 
 ### Changed

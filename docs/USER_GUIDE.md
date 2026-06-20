@@ -233,7 +233,7 @@ See [README.md](../README.md#troubleshooting-quick-links) for additional trouble
 3. Configure your Notes Directory and Content Directories in plugin settings
 4. Load `ggml-org/bge-m3-Q8_0-GGUF` as embedding model on local server
 5. Set up vision model for image analysis and annotation
-6. Install Python 3.9+ if needed
+6. Install Python 3.9+ if needed for RAG/PDF processing
 7. Start a chat — the agent guides you through any remaining configuration
 
 See [README.md](../README.md) for detailed setup notes and technical specifications.

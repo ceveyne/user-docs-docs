@@ -69,12 +69,12 @@ In addition to the resources your main agent model requires, keep in mind:
 
 - **VRAM overhead:** The embedding model and vision model add approximately **6.5 GB VRAM** on top of your agent model's requirements.
 - **Context window:** As with many "agentic" tasks, a large context window is needed — especially when working with agent instructions. A minimum of **32 768 tokens** is recommended; smaller windows will struggle to hold retrieved chunks and conversation history simultaneously.
-- **KV Cache stability:** The larger the context window, the more important a stable cache becomes. Both MLX and GGUF backends have seen significant improvements in this area recently — make sure you're on an up-to-date build.
+- **KV Cache stability:** The larger the context window, the more important a stable cache becomes. Keep LM Studio runtimes up to date for the most stable local inference behavior.
 - **Model selection criteria** are comparable to those for coding tasks: favor models with strong instruction-following, reasoning, and long-context performance over raw parameter count alone.
 
 ### Software
 
-- **Python 3.9+** — Required for the plugin's internal processing (embedding generation, document indexing). The plugin creates isolated virtual environments internally; nothing pollutes your system Python.
+- **Python 3.9+** — Required for RAG/PDF processing and `extract_image`. The plugin creates isolated virtual environments internally; nothing pollutes your system Python.
 - **LM Studio** — Latest runtime engines highly recommended: `lms runtime update --all`.
 - **LM Studio Server**
 
@@ -308,7 +308,7 @@ After completing all steps, test with a live search:
 
 ### Install Python, if needed
 
-`find_doc`, PDF parsing, and `extract_image` require **Python 3.9+**. The vision MLX backend requires **Python 3.11+**.
+`find_doc`, PDF parsing, and `extract_image` require **Python 3.9+**.
 
 The plugin searches for Python automatically. It probes well-known install locations in this order:
 
@@ -331,12 +331,9 @@ All packages are installed into isolated venvs inside the plugin directory; noth
 
 The plugin creates and repairs isolated Python environments automatically:
 
-| Environment                  | Used for                  | Minimum Python | Validation before reuse                |
-| ---------------------------- | ------------------------- | -------------- | -------------------------------------- |
-| `.rag-venv`                  | RAG parsing, PDF handling | 3.9+           | `python3`, `pip`, `docling`, `fitz`    |
-| `.fastvlm/venv`              | local vision HTTP server  | 3.9+           | `python3`, `pip`, `fastapi`, `uvicorn` |
-| `.fastvlm/qwen3vl_venv`      | MLX Qwen3-VL backend      | 3.11+          | `python3`, `pip`, `mlx_vlm`, `PIL`     |
-| `.fastvlm/qwen3vl_gguf_venv` | GGUF Qwen3-VL backend     | 3.9+           | `python3`, `pip`, `llama_cpp`, `PIL`   |
+| Environment | Used for                  | Minimum Python | Validation before reuse             |
+| ----------- | ------------------------- | -------------- | ----------------------------------- |
+| `.rag-venv` | RAG parsing, PDF handling | 3.9+           | `python3`, `pip`, `docling`, `fitz` |
 
 Ready markers are only trusted when these checks pass. If an environment was deleted or is incomplete, the plugin rebuilds it instead of waiting until a later timeout.
 
@@ -355,7 +352,7 @@ Ready markers are only trusted when these checks pass. If an environment was del
 | `embeddingModel`        | `ggml-org/bge-m3-Q8_0-GGUF` | Embedding model for semantic retrieval (must be loaded in LM Studio)                                       |
 | `embeddingBaseUrl`      | `http://127.0.0.1:1234/v1`  | Embedding/Vision API Base URL                                                                              |
 | `embeddingApiKey`       | _(empty)_                   | API key (only if the server requires authentication)                                                       |
-| `qwen3VlModelPath`      | `qwen/qwen3-vl-8b`          | Absolute path to the Qwen3-VL model directory                                                              |
+| `qwen3VlModelPath`      | `qwen/qwen3-vl-8b`          | LM Studio model key for the Qwen3-VL Vision API model                                                      |
 | `visionPrompt`          | _(empty)_                   | Default prompt for `analyse_image`. Leave empty to disable automatic description                           |
 | `qwen3VlOdPrompt`       | `_(built-in)_`              | Instruction sent to Qwen3-VL for object detection (`annotate_image`)                                       |
 
@@ -371,7 +368,7 @@ Ready markers are only trusted when these checks pass. If an environment was del
 | `extract_image`   | Render a PDF page to PNG via PyMuPDF and register it as `iN`.                                                       |
 | `review_image`    | Present image candidates to the user for selection.                                                                 |
 | `review_sequence` | Step through a sequence of images interactively.                                                                    |
-| `analyse_image`   | Describe the pixel content of a `pN`/`iN`/`aN` image via FastVLM or the configured LM Studio Vision API backend.    |
+| `analyse_image`   | Describe the pixel content of a `pN`/`iN`/`aN` image via the configured LM Studio Vision API backend.               |
 | `annotate_image`  | Detect objects and draw bounding boxes via Qwen3-VL.                                                                |
 | `show_image`      | Promote a `pN`/`iN` candidate to a visible chat image.                                                              |
 | `skip_doc`        | Remove a `read_doc` result from the API context (token saving).                                                     |
