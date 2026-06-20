@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.6] - 2026-06-20 Revision 6
+
+### Changed
+
+- `annotate_image` tool-result JSON no longer echoes the caller-supplied detection `task`; detection state and audit metadata still keep the internal task where needed.
+
+---
+
 ## [0.1.5] - 2026-06-20 Revision 5
 
 ### Changed
