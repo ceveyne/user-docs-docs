@@ -22,7 +22,7 @@ All components run on one machine. LM Studio acts as both client and server.
 │  │  ┌──────────────────────────────────────────────────────┐  │  │
 │  │  │  LM Studio Server (local)                            │  │  │
 │  │  │  baseUrl: http://127.0.0.1:1234/v1                   │  │  │
-│  │  │  Agent Model: qwen/qwen3.6-27b                       │  │  │
+│  │  │  Agent Model: qwen/qwen3.6-35b-a3b                   │  │  │
 │  │  │  Embedding Model: ggml-org/bge-m3-Q8_0-GGUF          │  │  │
 │  │  │  Vision Model: qwen/qwen3-vl-8b                      │  │  │
 │  │  └──────────────────────────────────────────────────────┘  │  │
@@ -38,7 +38,7 @@ graph TD
         subgraph LMStudioApp["LM Studio App"]
             Plugin["Plugin: user-docs<br>vision-capability-primer:<br>&nbsp;&nbsp; qwen/qwen3-vl-4b"]
 
-            LMServerLocal["LM Studio Server (local)<br>baseUrl: http://127.0.0.1:1234/v1<br>Agent Model: qwen/qwen3.6-27b<br>Embedding Model: ggml-org/bge-m3-Q8_0-GGUF<br>Vision Model: qwen/qwen3-vl-8b"]
+            LMServerLocal["LM Studio Server (local)<br>baseUrl: http://127.0.0.1:1234/v1<br>Agent Model: qwen/qwen3.6-35b-a3b<br>Embedding Model: ggml-org/bge-m3-Q8_0-GGUF<br>Vision Model: qwen/qwen3-vl-8b"]
         end
     end
 
@@ -79,7 +79,6 @@ The LM Studio Server (agent inference) runs on a dedicated, more powerful machin
 │  │  ┌──────────────────────────────────────────────────────┐  │  │   │                             │
 │  │  │  LM Studio Server (local)                            │  │  │   │                             │
 │  │  │  baseUrl: http://127.0.0.1:1234/v1                   │  │  │   │                             │
-│  │  │  Agent Model: qwen/qwen3.6-27b                       │  │  │   │                             │
 │  │  │  Embedding Model: ggml-org/bge-m3-Q8_0-GGUF          │  │  │   │                             │
 │  │  │  Vision Model: qwen/qwen3-vl-8b                      │  │  │   │                             │
 │  │  └──────────────────────────────────────────────────────┘  │  │   └─────────────────────────────┘
@@ -95,7 +94,7 @@ graph LR
         subgraph LMStudioApp["LM Studio App"]
             Plugin["Plugin: user-docs<br>vision-capability-primer:<br>&nbsp;&nbsp; qwen/qwen3-vl-4b"]
 
-            LMServerLocal["LM Studio Server (local)<br>baseUrl: http://127.0.0.1:1234/v1<br>Agent Model: qwen/qwen3.6-27b<br>Embedding Model: ggml-org/bge-m3-Q8_0-GGUF<br>Vision Model: qwen/qwen3-vl-8b"]
+            LMServerLocal["LM Studio Server (local)<br>baseUrl: http://127.0.0.1:1234/v1<br>Embedding Model: ggml-org/bge-m3-Q8_0-GGUF<br>Vision Model: qwen/qwen3-vl-8b"]
         end
     end
 
@@ -111,7 +110,7 @@ graph LR
 
 | Setting            | Value                       |
 | ------------------ | --------------------------- |
-| `model`            | `qwen/qwen3.6-35b-a3b`      |
+| `model`            | `qwen/qwen3.6-27b`          |
 | `baseUrl`          | `http://127.0.0.1:1234/v1`  |
 | `embeddingModel`   | `ggml-org/bge-m3-Q8_0-GGUF` |
 | `qwen3VlModelPath` | `qwen/qwen3-vl-8b`          |

@@ -9,6 +9,15 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.7] - 2026-06-26 Revision 7
+
+### Changed
+
+- Vision object detection now always applies the concise label-format rule, including task-specific detection prompts, so generated detection labels stay short and specific.
+- Updated user documentation (README.md, DEPLOYMENT.md)
+
+---
+
 ## [0.1.6] - 2026-06-20 Revision 6
 
 ### Changed

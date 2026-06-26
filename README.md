@@ -114,7 +114,7 @@ All components run on one machine. LM Studio acts as both client and server.
 │  │  ┌──────────────────────────────────────────────────────┐  │  │
 │  │  │  LM Studio Server (local)                            │  │  │
 │  │  │  baseUrl: http://127.0.0.1:1234/v1                   │  │  │
-│  │  │  Agent Model: qwen/qwen3.6-27b                       │  │  │
+│  │  │  Agent Model: qwen/qwen3.6-35b-a3b                   │  │  │
 │  │  │  Embedding Model: ggml-org/bge-m3-Q8_0-GGUF          │  │  │
 │  │  │  Vision Model: qwen/qwen3-vl-8b                      │  │  │
 │  │  └──────────────────────────────────────────────────────┘  │  │
@@ -147,7 +147,6 @@ The LM Studio Server (agent inference) runs on a dedicated, more powerful machin
 │  │  ┌──────────────────────────────────────────────────────┐  │  │   │                             │
 │  │  │  LM Studio Server (local)                            │  │  │   │                             │
 │  │  │  baseUrl: http://127.0.0.1:1234/v1                   │  │  │   │                             │
-│  │  │  Agent Model: qwen/qwen3.6-27b                       │  │  │   │                             │
 │  │  │  Embedding Model: ggml-org/bge-m3-Q8_0-GGUF          │  │  │   │                             │
 │  │  │  Vision Model: qwen/qwen3-vl-8b                      │  │  │   │                             │
 │  │  └──────────────────────────────────────────────────────┘  │  │   └─────────────────────────────┘
