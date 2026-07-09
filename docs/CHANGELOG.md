@@ -9,6 +9,22 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.8] - 2026-07-09 Revision 8
+
+### Added
+
+- Added support for new plugin **find-image**.
+
+### Changed
+
+- Moved persistent RAG data (`.rag-data`) and the managed RAG Python environment (`.rag-venv`) to `~/.user-docs`, so plugin updates no longer remove the local index or virtual environment.
+
+### Fixed
+
+- `export_doc` now copies LM Studio attachment previews from the chat working directory into `images/` and rewrites the exported Markdown links to those preview files, so exported attachment images render reliably.
+
+---
+
 ## [0.1.7] - 2026-06-26 Revision 7
 
 ### Changed
