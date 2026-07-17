@@ -9,6 +9,19 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.9] - 2026-07-17 Revision 9
+
+### Changed
+
+- New image previews now stay compact and consistent across chat media.
+
+### Fixed
+
+- `read_doc` now returns readable text for PDF files instead of binary gibberish.
+- Images found via other tools (e.g. **find-image**) could incorrectly show up as newly generated variants.
+
+---
+
 ## [0.1.8] - 2026-07-09 Revision 8
 
 ### Added
