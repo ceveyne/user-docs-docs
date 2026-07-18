@@ -9,11 +9,13 @@ Notable changes to this project will be documented in this file.
 
 ---
 
-## [0.1.9] - 2026-07-17 Revision 9
+## [0.1.9] - 2026-07-18 Revision 9
 
 ### Changed
 
 - New image previews now stay compact and consistent across chat media.
+- Picture search results now include their usable `pN` indexes.
+- Improved tool descriptions
 
 ### Fixed
 
