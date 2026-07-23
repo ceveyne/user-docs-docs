@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.10] - 2026-07-23 Revision 10
+
+### Added
+
+- Added support for image tags. When using the [find-image plugin](https://lmstudio.ai/ceveyne/find-image), images can now be tagged and found with exact tag filters.
+
+---
+
 ## [0.1.9] - 2026-07-18 Revision 9
 
 ### Changed
