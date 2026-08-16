@@ -9,6 +9,18 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.11] - 2026-08-16 Revision 11
+
+### Added
+
+- Added support for Qwen3.8 27B.
+
+### Fixed
+
+- Fixed rare text corruption (scrambled or missing words) that could appear right after a thinking phase, especially just before a tool call.
+
+---
+
 ## [0.1.10] - 2026-07-23 Revision 10
 
 ### Added
