@@ -9,6 +9,13 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.12] - 2026-09-06 Revision 12
+
+### Changed
+
+- Detected object labels no longer contain commas or other punctuation.
+- Selecting stored detections by label (`detectLabel`) in `annotate_image` now works reliably when passing a list of labels.
+
 ## [0.1.11] - 2026-08-16 Revision 11
 
 ### Added
