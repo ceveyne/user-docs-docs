@@ -73,7 +73,7 @@ The LM Studio Server (agent inference) runs on a dedicated, more powerful machin
 │  │  │                                                      │  │  │   │                             │
 │  │  │  vision-capability-primer: qwen/qwen3-vl-4b          │  │  │   │                             │
 │  │  └──────────────────────────────────────────────────────┘  │  │   │  Agent Model:               │
-│  │                           │                                │  │   │  qwen/qwen3.6-27b           │
+│  │                           │                                │  │   │  qwen/qwen3.8-27b           │
 │  │                           │ OpenAI-compat. API ───────────────│──▶︎│  http://<studio-ip>:1234/v1 │
 │  │                           ▼                                │  │   │                             │
 │  │  ┌──────────────────────────────────────────────────────┐  │  │   │                             │
@@ -99,7 +99,7 @@ graph LR
     end
 
     subgraph MacStudio["Mac Studio M3 Ultra"]
-        LMSServerRemote["LM Studio Server<br><br>Agent Model:<br>&nbsp;&nbsp; qwen/qwen3.6-27b<br><br>http://&lt;studio-ip&gt;:1234/v1"]
+        LMSServerRemote["LM Studio Server<br><br>Agent Model:<br>&nbsp;&nbsp; qwen/qwen3.8-27b<br><br>http://&lt;studio-ip&gt;:1234/v1"]
     end
 
     Plugin -->|"OpenAI-compat. API"| LMServerLocal
@@ -110,7 +110,7 @@ graph LR
 
 | Setting            | Value                       |
 | ------------------ | --------------------------- |
-| `model`            | `qwen/qwen3.6-27b`          |
+| `model`            | `qwen/qwen3.8-27b`          |
 | `baseUrl`          | `http://127.0.0.1:1234/v1`  |
 | `embeddingModel`   | `ggml-org/bge-m3-Q8_0-GGUF` |
 | `qwen3VlModelPath` | `qwen/qwen3-vl-8b`          |

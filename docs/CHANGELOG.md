@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.13] - 2026-09-08 Revision 13
+
+### Added
+
+- Added support for image extraction from PDF. PDF images can now be registered for review and processing.
+
+---
+
 ## [0.1.12] - 2026-09-06 Revision 12
 
 ### Changed
