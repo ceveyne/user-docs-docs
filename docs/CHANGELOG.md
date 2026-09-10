@@ -9,6 +9,24 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.14] - 2026-09-10 Revision 14
+
+### Added
+
+- Added support for image extraction from DOCX. DOCX images can now be registered for review and processing.
+
+### Changed
+
+- Upgraded the docling parsing library.
+
+### Fixed
+
+- PDF parsing could silently extract far less text and fewer embedded images than a PDF actually contained; upgraded the underlying parsing library to fix this.
+- Fixed RAG chunking failing on Markdown documents with embedded Base64 images: raw image payload could be chunked as text and could exceed the embedding model's context window. Base64 image data is now replaced with a placeholder before chunking.
+- LM Studio conversations stored in subfolders are no longer unnecessarily re-indexed.
+
+---
+
 ## [0.1.13] - 2026-09-08 Revision 13
 
 ### Added
