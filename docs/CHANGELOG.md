@@ -9,6 +9,19 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.15] - 2026-10-12 Revision 15
+
+### Added
+
+- `memorize_doc` and `rewrite_doc` can now write and update Agent Skills–compatible `SKILL.md` skill bundles (with companion files) in the Notes Directory, in addition to plain notes.
+- `analyse_image` can now read full generation metadata (prompt, model, sampler, steps, seed, LoRAs) from pictures sourced from a Draw Things project file, not just from saved images.
+
+### Fixed
+
+- Fixed wrong bounding-box placement in `annotate_image` for photos with EXIF orientation metadata (e.g. phone camera photos).
+
+---
+
 ## [0.1.14] - 2026-09-10 Revision 14
 
 ### Added

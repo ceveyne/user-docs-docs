@@ -184,8 +184,17 @@ The agent can autonomously:
 - Delete outdated notes after confirming their existence (`forget_doc`)
 - Export complete chat conversations as reusable documentation (`export_doc`)
 - Manage context window by removing documents no longer needed (`skip_doc`)
+- Author and update reusable [Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)–compatible skill bundles (`memorize_doc`, `rewrite_doc`)
 
 All created notes are immediately indexed and become searchable in the next RAG cycle. Your knowledge base grows with every productive conversation.
+
+#### Skills
+
+A skill is a folder `<name>/` in the Notes Directory containing a `SKILL.md` entry point with `name`/`description` frontmatter instead of a note's `title`/`tags`, plus optional companion files (e.g. `tools/*.md`, `workflows/*.md`) that `SKILL.md` links to with relative Markdown links:
+
+- `memorize_doc` with `name` + `description` writes `<name>/SKILL.md`; with `name` + `file` it writes a companion file (no frontmatter) at `<name>/<file>`.
+- `rewrite_doc` detects a SKILL.md by its frontmatter and preserves `name`/`description` instead of overwriting them with note-style `title`/`tags`; a frontmatter-less companion file is rewritten as plain text.
+- `find_doc`/`read_doc` work unchanged — skill files are regular notes under the hood and get indexed, searched, and read the same way. Because every bundle's entry point is literally named `SKILL.md`, `find_doc` shows it as `<name>/SKILL.md` to disambiguate between skills.
 
 ### Configuration inspection via `read_config`
 

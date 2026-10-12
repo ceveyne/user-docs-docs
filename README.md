@@ -243,6 +243,8 @@ With conversations added:
 > Configure via **Plugin Settings → Notes Directory / Content Directories**.
 > Set `Auto-read user-docs Guide` toggle based on your Step 3 decision.
 
+> **Skills:** `memorize_doc` can also write [Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)–compatible `SKILL.md` bundles (a folder `<name>/SKILL.md` plus optional companion files) into the Notes Directory — see [USER_GUIDE.md](docs/USER_GUIDE.md#note-management-by-the-agent) for details.
+
 ---
 
 ### Step 5 — Embedding Model + Vision Model
@@ -359,23 +361,23 @@ Ready markers are only trusted when these checks pass. If an environment was del
 
 ## Tools
 
-| Tool              | Description                                                                                                         |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `find_doc`        | Hybrid RAG search. Returns text context + registers embedded images as `pN` candidates.                             |
-| `read_doc`        | Read a note file in full or partial form. Registers document images by default; base64 payloads are stripped.       |
-| `fetch_image`     | Register all images from one exact filename, Markdown document, image file, or LM Studio conversation as `pN`.      |
-| `extract_image`   | Render a PDF page to PNG via PyMuPDF and register it as `iN`.                                                       |
-| `review_image`    | Present image candidates to the user for selection.                                                                 |
-| `review_sequence` | Step through a sequence of images interactively.                                                                    |
-| `analyse_image`   | Describe the pixel content of a `pN`/`iN`/`aN` image via the configured LM Studio Vision API backend.               |
-| `annotate_image`  | Detect objects and draw bounding boxes via Qwen3-VL.                                                                |
-| `show_image`      | Promote a `pN`/`iN` candidate to a visible chat image.                                                              |
-| `skip_doc`        | Remove a `read_doc` result from the API context (token saving).                                                     |
-| `memorize_doc`    | Write a new note to `notesDirectory` with YAML frontmatter.                                                         |
-| `rewrite_doc`     | Overwrite an existing note.                                                                                         |
-| `forget_doc`      | Delete a note from `notesDirectory`.                                                                                |
-| `export_doc`      | Export the current chat as a Markdown note into `notesDirectory`.                                                   |
-| `read_config`     | Return the current plugin settings as JSON so an agent can inspect live configuration values and assist with setup. |
+| Tool              | Description                                                                                                              |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `find_doc`        | Hybrid RAG search. Returns text context + registers embedded images as `pN` candidates.                                  |
+| `read_doc`        | Read a note file in full or partial form. Registers document images by default; base64 payloads are stripped.            |
+| `fetch_image`     | Register all images from one exact filename, Markdown document, image file, or LM Studio conversation as `pN`.           |
+| `extract_image`   | Render a PDF page to PNG via PyMuPDF and register it as `iN`.                                                            |
+| `review_image`    | Present image candidates to the user for selection.                                                                      |
+| `review_sequence` | Step through a sequence of images interactively.                                                                         |
+| `analyse_image`   | Describe the pixel content of a `pN`/`iN`/`aN` image via the configured LM Studio Vision API backend.                    |
+| `annotate_image`  | Detect objects and draw bounding boxes via Qwen3-VL.                                                                     |
+| `show_image`      | Promote a `pN`/`iN` candidate to a visible chat image.                                                                   |
+| `skip_doc`        | Remove a `read_doc` result from the API context (token saving).                                                          |
+| `memorize_doc`    | Write a new note to `notesDirectory` with YAML frontmatter, or author a SKILL.md skill bundle (Agent Skills–compatible). |
+| `rewrite_doc`     | Overwrite an existing note, SKILL.md, or skill companion file in place.                                                  |
+| `forget_doc`      | Delete a note from `notesDirectory`.                                                                                     |
+| `export_doc`      | Export the current chat as a Markdown note into `notesDirectory`.                                                        |
+| `read_config`     | Return the current plugin settings as JSON so an agent can inspect live configuration values and assist with setup.      |
 
 <a id="setup-guide-images"></a>
 
