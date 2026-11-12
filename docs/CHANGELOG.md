@@ -9,6 +9,14 @@ Notable changes to this project will be documented in this file.
 
 ---
 
+## [0.1.16] - 2026-11-12 Revision 16
+
+### Fixed
+
+- Fixed `annotate_image` running a fresh detection on an annotated copy instead of the original. A target is now always looked up in the chat's media state first, however it is given (`aN`/`iN`/`pN`/`vN`, the original filename or the preview filename), and a result of `detect_object`, `annotate_image` or `mask` is never used as the source while its original is known.
+
+---
+
 ## [0.1.15] - 2026-10-12 Revision 15
 
 ### Added
